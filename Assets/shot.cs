@@ -14,4 +14,11 @@ public class shot : MonoBehaviour {
 	void Update () {
         rigidbody.velocity = transform.forward * speed;
 	}
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Pick up"))
+        {
+            other.gameObject.SetActive(false);
+        }
+    }
 }
